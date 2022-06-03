@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria X</title>
+    <link rel="stylesheet" href="Frete.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+
+        <div id="NavMenu">
+            <nav>
+                <ul>
+                    <li class="Nav_Item">
+                        <a href="./" id="Titulo">
+                             Livraria X
+                        </a>
+                    </li>
+                    <li class="Nav_Item">
+                        <a href="#">
+                            Acão
+                        </a>
+                    </li>
+                    <li class="Nav_Item">
+                        <a href="#">
+                            Aventura
+                        </a>
+                    </li>
+                    <li class="Nav_Item">
+                        <a href="#">
+                            Romance
+                        </a>
+                    </li>
+                    <li class="Nav_Item">
+                        <a href="#">
+                            Suspense
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="shopping-bag">
+            <a href="./cart.html">
+                <img src="images/bag.png" alt="cart">
+                Carrinho
+                <div class="total-items-in-cart">
+                    6 Itens
+                </div>
+            </a>
+        </div>
+        
+
+
+    </header>
+    <div class="wrapper">
+        <section class="section content columns is-centered">
+            <div class="products-list">
+                <div class="products">
+        
+                </div>
+                <div class="cart">
+                    <div class="cart-header">
+                    </div>
+                    <div class="cart-items">
+        
+                    </div>
+                    <div class="cart-footer">
+                        <div class="subtotal">
+                            total (6 items): R$161.94
+                        </div>
+                        <div class="checkout">
+                                <a href="index.html">Voltar a Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-three-fifths-tablet">
+                <div class="card">
+                    <div class="card-image is-flex is-horizontal-center">
+                        <figure class="image is-128x128">
+                            <img class="icon-img" src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/128x128/delivery_truck.png">
+                        </figure>
+                        
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <h1 class="is-horizontal-center">Calcula Frete</h1>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="is-horizontal-center">
+                                <div class="field has-addons">
+                                    <div class="control in">
+                                        <input class="input" type="text" placeholder="Endereço">
+                                    </div>
+                                </div>
+                                <p class="help btnValidation">Informe seu CEP</p>
+                                <input class="input" type="text" placeholder=" '00000-000' ">
+                            </div>
+                            <div class="checkboxes container is-fluid is-horizontal-center">
+                                <label class="checkbox">
+                                    <input type="radio" value="5" name="shipping_radio" checked="checked" onclick="change_shipping_type(5)">
+                                    15+ (agendada) R$10,00
+                                </label>
+                                <label class="checkbox">
+                                    <input type="radio" value="3" name="shipping_radio" onclick="change_shipping_type(3)">
+                                    5 Normal R$10,00
+                                </label>
+                                <label class="checkbox">
+                                    <input type="radio" value="2" name="shipping_radio" onclick="change_shipping_type(2)">
+                                    2 Expressa R$15,00
+                                </label>
+                            </div>
+
+                            <div id="divpt2">
+                                <button id="calcBtn" onclick="Calcfrete()"  >Calcular</button>
+                                <div id="Divpt3">
+                                    <div class="column is-two-fifths has-text-right">
+                                        </div>
+                                        <div id="resultado">
+                                            <p>Total: </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <script src="frete.Js"></script>
+    <script src="app.js"></script>
+    <script src="products.js"></script>
+    <script>
+        const porductsListEl = document.querySelector(".products-list");
+        const seeMoreBtn = document.querySelector(".see-more-btn");
+
+        seeMoreBtn.addEventListener('click', () => {
+            porductsListEl.scrollIntoView({behavior: "smooth"})
+        })
+    </script>
+</body>
+</html>
